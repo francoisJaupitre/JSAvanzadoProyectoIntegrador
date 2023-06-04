@@ -1,0 +1,37 @@
+﻿<div class="index-page">
+    <!-- <form> -->
+    <div class="row">
+        <div class="col-lg-10 form-group">
+            <label for="nombreInput">Buscar por nombre de producto</label>
+            <input type="text" class="form-control" id="nombreInput" aria-describedby="nombreHelp" placeholder="Ingrese un nombre" />
+            <small id="nombreHelp" class="form-text text-muted">Puede escribir su busqueda aquí.</small>
+        </div>
+        <div class="col-lg-2 form-group">
+            <select class="form-control" id="ordenarSelect">
+                <option value="">Ordenar</option>
+                <option value="mayor">Mayor precio</option>
+                <option value="menor">Menor precio</option>
+            </select>
+        </div>
+        <!--         <div class="col-lg-1">
+                    <button type="submit" class="btn btn-info">Buscar</button>
+                 </div> -->
+    </div>
+    <!-- </form> -->
+    <div id="list" class="row">
+        {{#each articulos}}
+        <div class="col-3" data-id="{{this.id}}">
+            <div class="card m-1" style="width: 18rem;">
+                <img class="card-img-left" src="{{this.urlImagen}}" alt="Card image cap" />
+                <div class="card-body">
+                    <h5 class="card-title">{{this.nombre}}</h5>
+                    <p class="card-text">
+                        <span>$</span>
+                        <span>{{this.precio}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
